@@ -30,3 +30,23 @@ select min(employee_salary) as Minimum from employee_payroll;
 select max(employee_salary) as Minimum from employee_payroll;
 select employee_gender from employee_payroll group by employee_gender;
 select count(employee_gender), employee_payroll.employee_gender from employee_payroll group by employee_gender;
+
+
+-- uc8
+alter table employee_payroll add employee_phone int;
+alter table employee_payroll add  employee_address varchar(20) default 'add address';
+alter table employee_payroll add employee_department varchar(20) not null;
+
+
+-- uc9
+alter table employee_payroll 
+add basic_pay int,
+add deductions int,
+add taxable_pay int,
+add income_tax int, 
+add net_pay int;
+
+
+-- uc10
+insert into employee_payroll (employee_name, employee_gender, employee_salary, employee_start_date, employee_phone, employee_address, employee_department, basic_pay, deductions, taxable_pay, income_tax, net_pay) values('terrisa','F',47000,'2008-12-12',5433574,'20 street lane','CS',40000,2000,1000,2000,43000);
+insert into employee_payroll (employee_name, employee_gender, employee_salary, employee_start_date, employee_phone, employee_address, employee_department, basic_pay, deductions, taxable_pay, income_tax, net_pay) values('terrisa','F',48000,'2009-08-04',545474,'masachusetts','CS',40000,500,500,2000,44000);
